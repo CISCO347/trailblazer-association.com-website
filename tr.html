@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailblazer Association</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222;
+            color: #fff;
+        }
+
+        header,
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin: 10px;
+            padding: 10px;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .content {
+            padding: 20px;
+            color: #ddd;
+        }
+
+        .login-form input,
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .login-form button,
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .login-form button:hover,
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        .financial-overview {
+            display: none;
+            background-color: #444;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-container {
+            display: none;
+            background-color: #444;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2,
+        h3 {
+            color: #fff;
+        }
+
+        .contribution-history,
+        .expenditure {
+            background-color: #555;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Trailblazer Association</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#membership">Membership</a>
+        <a href="#events">Events</a>
+        <a href="#blog">Blog/Updates</a>
+        <a href="#contact">Contact</a>
+        <a href="#login">Member Login</a>
+    </nav>
+
+    <div class="content">
+        <h2 id="home">Home Page</h2>
+        <p>Welcome to Trailblazer Association, where growth and empowerment thrive through collaboration and investment.
+        </p>
+
+        <h3>Mission</h3>
+        <p>We aim to empower members through collaborative investments, knowledge sharing, and mutual support.</p>
+
+        <h3>Vision</h3>
+        <p>To create a financially self-sufficient community by fostering entrepreneurial growth and financial literacy.
+        </p>
+
+        <h3>Objectives</h3>
+        <ul>
+            <li>Provide investment opportunities to members.</li>
+            <li>Ensure transparency in financial activities.</li>
+            <li>Support members in achieving financial independence.</li>
+        </ul>
+
+        <h2 id="about-us">About Us</h2>
+        <p>Trailblazer Association is dedicated to fostering community growth through investments and collaboration. Our
+            members come together to share knowledge, offer support, and embark on joint ventures that promote mutual
+            success.</p>
+
+        <h2 id="membership">Membership</h2>
+        <p>By joining Trailblazer, you gain access to exclusive investment opportunities, mentorship, and a network of
+            like-minded individuals. Apply today to start your journey towards financial empowerment!</p>
+        <form class="membership-form">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Join Now</button>
+        </form>
+
+        <h2 id="events">Events</h2>
+        <p>Stay updated on our upcoming and past events:</p>
+        <ul>
+            <li>Investment Seminar - Date</li>
+            <li>Networking Event - Date</li>
+            <li>Financial Literacy Workshop - Date</li>
+        </ul>
+
+        <h2 id="blog">Blog/Updates</h2>
+        <p>Read about our latest initiatives, success stories, and achievements in the blog section.</p>
+        <ul>
+            <li>Blog Post 1: Investment Strategies for 2024</li>
+            <li>Blog Post 2: Trailblazer's Impact in the Community</li>
+            <li>Blog Post 3: The Future of Financial Independence</li>
+        </ul>
+
+        <h2 id="contact">Contact</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <h2 id="login">Member Login</h2>
+    <form class="login-form">
+        <input type="text" id="name" placeholder="Enter your name (all caps)" required>
+        <input type="password" id="password" placeholder="Enter your password (TR followed by 4 digits)" required>
+        <button type="button" onclick="login()">Login</button>
+    </form>
+
+    <div class="profile-container" id="profile-container">
+        <h3>Welcome, <span id="profile-name"></span></h3>
+        <p>Account Status: <span id="status">Active</span></p>
+        <p>Role: <span id="role"></span></p>
+        <p>Basic Information: <span id="info">Member since 2024</span></p>
+
+        <h3>Your Contributions</h3>
+        <div class="contribution-history">
+            <p>January: $100</p>
+            <p>February: $120</p>
+            <p>March: $110</p>
+        </div>
+
+        <h3>Expenditure Overview</h3>
+        <div class="expenditure">
+            <p>Event Costs: $300</p>
+            <p>Operational Costs: $150</p>
+            <p>Investment Funds: $500</p>
+        </div>
+    </div>
+
+    <h2 id="payment">Payment Confirmation</h2>
+    <form class="payment-form">
+        <p>To complete your membership payment, send KSh 500 to the following M-Pesa number:</p>
+        <p><strong>0112346086</strong></p>
+        <p>Once payment is successful, you will receive an M-Pesa confirmation. Please enter the M-Pesa transaction code
+            below:</p>
+        <input type="text" id="mpesa-code" placeholder="Enter M-Pesa transaction code" required>
+        <button type="button" onclick="verifyPayment()">Submit Payment Code</button>
+    </form>
+
+    <div id="payment-status" style="display:none;">
+        <h3>Payment Status:</h3>
+        <p id="status-message"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Trailblazer Association. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const members = {
+            'CORNELIUS KUNGU': 'TR0000',
+            'VICTOR ODHIAMBO': 'TR0001',
+            'EDWARD MDEREMA': 'TR0002',
+            'ODU JOB': 'TR0003',
+            'SHADRACK GITHINJI': 'TR0004',
+            'JEFFERSON KIRIMI': 'TR0005',
+            'THOMAS MWARANDU': 'TR0006',
+            'EVANS NG\'ANG\'A': 'TR0007',
+            'STEVE OTIENO': 'TR0008',
+            'ABRAHAM HENDRICH': 'TR0009'
+        };
+
+        function login() {
+            var name = document.getElementById("name").value.toUpperCase();
+            var password = document.getElementById("password").value;
+            if (members[name] === password) {
+                document.getElementById("profile-container").style.display = "block";
+                document.getElementById("profile-name").innerText = name;
+                document.getElementById("role").innerText = getRole(name);
+                alert("Login successful!");
+            } else {
+                alert("Incorrect credentials. Please contact the IT team.");
+            }
+        }
+
+        function getRole(name) {
+            switch (name) {
+                case 'CORNELIUS KUNGU': return 'President';
+                case 'VICTOR ODHIAMBO': return 'Vice President';
+                case 'EDWARD MDEREMA': return 'Treasurer';
+                case 'ODU JOB': return 'Secretary';
+                default: return 'Member';
+            }
+        }
+
+        function verifyPayment() {
+            var mpesaCode = document.getElementById("mpesa-code").value;
+
+            if (mpesaCode) {
+                // Simulate payment verification (backend verification needed)
+                document.getElementById("payment-status").style.display = "block";
+                document.getElementById("status-message").innerText = "Payment successful! Thank you for your contribution.";
+            } else {
+                alert("Please enter a valid M-Pesa transaction code.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
